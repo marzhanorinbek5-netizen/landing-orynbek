@@ -1,110 +1,578 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Онлайн-школа шахмат для детей и взрослых. Обучение от новичка до гроссмейстера.">
-  <title>Шахматная академия — Обучение шахматам онлайн</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♟</text></svg>">
+
+<meta name="description"
+     content="Онлайн-школа шахмат Маржан Орынбек. Индивидуальное обучение шахматам для детей и взрослых.">
+
+  <title>ChessOnline — Шахматная академия Маржан Орынбек</title>
+
+  <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♟</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
-    <div class="container logo-nav">
-      <a href="#" class="logo">♟ ChessOnline</a>
-      <nav>
-        <ul>
-          <li><a href="#about">О нас</a></li>
-          <li><a href="#levels">Уровни</a></li>
-          <li><a href="#trainers">Тренеры</a></li>
-          <li><a href="#contacts">Запись</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- HEADER -->
+
+  <header class="header">
+    <div class="container nav-wrapper">
+
+```
+  <a href="#" class="logo">
+    <span class="logo-icon">♟</span>
+    <span>Chess<span>Online</span></span>
+  </a>
+
+  <nav>
+    <a href="#about">О школе</a>
+    <a href="#levels">Обучение</a>
+    <a href="#trainers">Тренеры</a>
+    <a href="#contacts" class="nav-button">Записаться</a>
+  </nav>
+
+</div>
+```
+
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Онлайн-школа шахмат Маржан Орынбек</h1>
-        <p>Развивайте стратегическое мышление и побеждайте на турнирах не выходя из дома.</p>
-        <a href="#contacts" class="btn">Записаться на бесплатный урок</a>
-      </div>
-    </section>
 
-    <section id="about">
-      <div class="container">
-        <h2>О нашей школе</h2>
-        <p>Мы обучаем шахматам с нуля до профессионального уровня. Наши методики сочетают классическую шахматную теорию и интерактивные онлайн-практики.</p>
-      </div>
-    </section>
+```
+<!-- HERO -->
+<section class="hero">
 
-    <section id="levels">
-      <div class="container">
-        <h2>Уровни обучения</h2>
-        <div class="grid-3">
-          <article class="card">
-            <h3>Начинающий</h3>
-            <p>Изучение правил, ходов фигур, базовых матовых комбинаций и простых тактических приемов.</p>
-          </article>
-          <article class="card">
-            <h3>Средний</h3>
-            <p>Глубокий анализ дебютов, пешечных структур, эндшпиля и позиционной игры.</p>
-          </article>
-          <article class="card">
-            <h3>Продвинутый</h3>
-            <p>Подготовка к квалификационным турнирам, анализ партий гроссмейстеров и расчёт сложных вариантов.</p>
-          </article>
+  <div class="hero-glow glow-1"></div>
+  <div class="hero-glow glow-2"></div>
+
+  <div class="container hero-content">
+
+    <div class="hero-text">
+
+      <div class="badge">
+        <span>♛</span>
+        Шахматная академия
+      </div>
+
+      <h1>
+        Шахматы —
+        <span>искусство</span>
+        побеждать
+      </h1>
+
+      <p>
+        Онлайн-обучение шахматам с Маржан Орынбек.
+        Развивайте стратегическое мышление, уверенность
+        и готовьтесь к настоящим победам.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contacts" class="btn btn-primary">
+          Записаться на урок
+          <span>→</span>
+        </a>
+
+        <a href="#about" class="btn btn-secondary">
+          Узнать больше
+        </a>
+      </div>
+
+      <div class="hero-stats">
+
+        <div class="stat">
+          <strong>8+</strong>
+          <span>лет обучения</span>
+        </div>
+
+        <div class="stat">
+          <strong>500+</strong>
+          <span>учеников</span>
+        </div>
+
+        <div class="stat">
+          <strong>100%</strong>
+          <span>онлайн</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="chess-visual">
+
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+
+      <div class="chess-board">
+
+        <div class="piece piece-1">♜</div>
+        <div class="piece piece-2">♞</div>
+        <div class="piece piece-3">♝</div>
+        <div class="piece piece-4">♛</div>
+        <div class="piece piece-5">♚</div>
+        <div class="piece piece-6">♟</div>
+
+      </div>
+
+      <div class="floating-card">
+        <span class="floating-icon">♛</span>
+        <div>
+          <strong>Твой ход</strong>
+          <small>Начни путь к победе</small>
         </div>
       </div>
-    </section>
 
-    <section id="trainers">
-      <div class="container">
-        <h2>Наши тренеры</h2>
-        <div class="grid-2">
-          <article class="card-trainer">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300" alt="Фото тренера по шахматам" width="300" height="200">
-            <h3>Алексей Смирнов</h3>
-            <p>Мастер спорта по шахматам, стаж преподавания 8 лет.</p>
-          </article>
-          <article class="card-trainer">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300" alt="Фото женского тренера по шахматам" width="300" height="200">
-            <h3>Динара Сатпаева</h3>
-            <p>Международный мастер WIM, призер национальных чемпионатов.</p>
-          </article>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="section about">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="section-label">О ШКОЛЕ</span>
+
+      <h2>
+        Учимся думать на несколько
+        <span>ходов вперёд</span>
+      </h2>
+
+      <p>
+        Мы превращаем шахматы из сложной игры в увлекательный
+        инструмент развития мышления.
+      </p>
+
+    </div>
+
+
+    <div class="features">
+
+      <article class="feature-card">
+
+        <div class="feature-number">01</div>
+
+        <div class="feature-icon">♟</div>
+
+        <h3>Индивидуальный подход</h3>
+
+        <p>
+          Программа обучения подбирается
+          в зависимости от уровня и целей ученика.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card featured">
+
+        <div class="feature-number">02</div>
+
+        <div class="feature-icon">♞</div>
+
+        <h3>Практика и стратегия</h3>
+
+        <p>
+          Разбираем реальные партии, тактики,
+          комбинации и учимся принимать решения.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <div class="feature-number">03</div>
+
+        <div class="feature-icon">♛</div>
+
+        <h3>Результат</h3>
+
+        <p>
+          От первых ходов до подготовки
+          к турнирам и серьёзным соревнованиям.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LEVELS -->
+<section id="levels" class="section levels">
+
+  <div class="container">
+
+    <div class="section-heading center">
+
+      <span class="section-label">ОБУЧЕНИЕ</span>
+
+      <h2>
+        Найди свой
+        <span>уровень</span>
+      </h2>
+
+      <p>
+        Начинай с нуля или совершенствуй уже имеющиеся навыки.
+      </p>
+
+    </div>
+
+
+    <div class="levels-grid">
+
+      <article class="level-card">
+
+        <div class="level-top">
+          <span class="level-icon">♙</span>
+          <span class="level-number">01</span>
+        </div>
+
+        <h3>Начинающий</h3>
+
+        <p>
+          Первый шаг в мир шахмат.
+          Учимся правилам, ходам фигур
+          и основам тактики.
+        </p>
+
+        <ul>
+          <li>Правила шахмат</li>
+          <li>Основы стратегии</li>
+          <li>Простые комбинации</li>
+          <li>Мат в несколько ходов</li>
+        </ul>
+
+        <a href="#contacts">Начать обучение →</a>
+
+      </article>
+
+
+      <article class="level-card popular">
+
+        <div class="popular-label">ПОПУЛЯРНЫЙ</div>
+
+        <div class="level-top">
+          <span class="level-icon">♘</span>
+          <span class="level-number">02</span>
+        </div>
+
+        <h3>Средний</h3>
+
+        <p>
+          Улучшаем понимание позиции,
+          изучаем дебюты и учимся
+          планировать игру.
+        </p>
+
+        <ul>
+          <li>Дебютная подготовка</li>
+          <li>Пешечные структуры</li>
+          <li>Позиционная игра</li>
+          <li>Эндшпиль</li>
+        </ul>
+
+        <a href="#contacts">Начать обучение →</a>
+
+      </article>
+
+
+      <article class="level-card">
+
+        <div class="level-top">
+          <span class="level-icon">♕</span>
+          <span class="level-number">03</span>
+        </div>
+
+        <h3>Продвинутый</h3>
+
+        <p>
+          Глубокий анализ партий,
+          сложные варианты и подготовка
+          к соревнованиям.
+        </p>
+
+        <ul>
+          <li>Расчёт вариантов</li>
+          <li>Анализ партий</li>
+          <li>Подготовка к турнирам</li>
+          <li>Работа над ошибками</li>
+        </ul>
+
+        <a href="#contacts">Начать обучение →</a>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TRAINERS -->
+<section id="trainers" class="section trainers">
+
+  <div class="container">
+
+    <div class="section-heading center">
+
+      <span class="section-label">КОМАНДА</span>
+
+      <h2>
+        Учись у тех,
+        <span>кто играет</span>
+      </h2>
+
+    </div>
+
+
+    <div class="trainers-grid">
+
+      <article class="trainer-card">
+
+        <div class="trainer-photo trainer-photo-one">
+          <span>♟</span>
+        </div>
+
+        <div class="trainer-info">
+
+          <span class="trainer-role">
+            ШАХМАТНЫЙ ТРЕНЕР
+          </span>
+
+          <h3>Алексей Смирнов</h3>
+
+          <p>
+            Мастер спорта по шахматам.
+            Более 8 лет преподавательского опыта.
+          </p>
+
+          <div class="trainer-tags">
+            <span>Стратегия</span>
+            <span>Тактика</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="trainer-card">
+
+        <div class="trainer-photo trainer-photo-two">
+          <span>♕</span>
+        </div>
+
+        <div class="trainer-info">
+
+          <span class="trainer-role">
+            МЕЖДУНАРОДНЫЙ МАСТЕР
+          </span>
+
+          <h3>Динара Сатпаева</h3>
+
+          <p>
+            WIM, призёр национальных чемпионатов.
+            Специализация — турнирная подготовка.
+          </p>
+
+          <div class="trainer-tags">
+            <span>Дебюты</span>
+            <span>Турниры</span>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+  <div class="container cta-content">
+
+    <div>
+      <span class="section-label">ПЕРВЫЙ ШАГ</span>
+
+      <h2>
+        Готов сделать
+        <span>свой ход?</span>
+      </h2>
+
+      <p>
+        Запишись на бесплатный пробный урок
+        и познакомься с нашей системой обучения.
+      </p>
+    </div>
+
+    <a href="#contacts" class="btn btn-primary">
+      Записаться бесплатно →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACTS -->
+<section id="contacts" class="section contacts">
+
+  <div class="container contact-wrapper">
+
+    <div class="contact-info">
+
+      <span class="section-label">КОНТАКТЫ</span>
+
+      <h2>
+        Сделай первый
+        <span>ход</span>
+      </h2>
+
+      <p>
+        Оставь заявку, и мы свяжемся с тобой,
+        чтобы подобрать подходящий формат обучения.
+      </p>
+
+      <div class="contact-item">
+        <span>✉</span>
+        <div>
+          <small>EMAIL</small>
+          <strong>chessonline@mail.com</strong>
         </div>
       </div>
-    </section>
 
-    <section id="contacts">
-      <div class="container">
-        <h2>Запись на пробный урок</h2>
-        <form class="contact-form">
-          <div class="form-group">
-            <label for="name">Ваше имя:</label>
-            <input type="text" id="name" name="name" required placeholder="Маржан">
-          </div>
-          <div class="form-group">
-            <label for="email">Электронная почта:</label>
-            <input type="email" id="email" name="email" required placeholder="example@mail.com">
-          </div>
-          <div class="form-group">
-            <label for="message">Сообщение / Уровень подготовки:</label>
-            <textarea id="message" name="message" rows="4" required placeholder="Расскажите о своем опыте игры..."></textarea>
-          </div>
-          <button type="submit" class="btn">Отправить заявку</button>
-        </form>
+      <div class="contact-item">
+        <span>⌕</span>
+        <div>
+          <small>ФОРМАТ</small>
+          <strong>Онлайн · Zoom / Google Meet</strong>
+        </div>
       </div>
-    </section>
+
+    </div>
+
+
+    <form class="contact-form">
+
+      <div class="form-group">
+        <label for="name">Ваше имя</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Маржан"
+          required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="email">Электронная почта</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@mail.com"
+          required>
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="message">
+          Расскажите о себе
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Ваш уровень, возраст и цели обучения..."
+          required></textarea>
+
+      </div>
+
+
+      <button type="submit" class="btn btn-primary submit-btn">
+        Отправить заявку
+        <span>→</span>
+      </button>
+
+      <small class="form-note">
+        Нажимая кнопку, вы соглашаетесь
+        на обработку данных.
+      </small>
+
+    </form>
+
+  </div>
+
+</section>
+```
+
   </main>
 
+  <!-- FOOTER -->
+
   <footer>
-    <div class="container">
-      <p>&copy; 2026 Онлайн-школа шахмат Orynbek. Все права защищены.</p>
-    </div>
+
+```
+<div class="container footer-content">
+
+  <a href="#" class="logo">
+    <span class="logo-icon">♟</span>
+    <span>Chess<span>Online</span></span>
+  </a>
+
+  <p>
+    © 2026 ChessOnline. Шахматная академия Маржан Орынбек.
+  </p>
+
+  <a href="#" class="back-top">↑</a>
+
+</div>
+```
+
   </footer>
+
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const button = this.querySelector('button');
+
+      button.innerHTML = 'Заявка отправлена ✓';
+      button.style.pointerEvents = 'none';
+
+      this.reset();
+    });
+  </script>
 
 </body>
 </html>
