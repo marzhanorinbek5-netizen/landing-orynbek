@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Онлайн-школа шахмат для детей и взрослых. Обучение от новичка до гроссмейстера.">
+  <title>Шахматная академия — Обучение шахматам онлайн</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♟</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <header>
+    <div class="container logo-nav">
+      <a href="#" class="logo">♟ ChessOnline</a>
+      <nav>
+        <ul>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#levels">Уровни</a></li>
+          <li><a href="#trainers">Тренеры</a></li>
+          <li><a href="#contacts">Запись</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Онлайн-школа шахмат Маржан Орынбек</h1>
+        <p>Развивайте стратегическое мышление и побеждайте на турнирах не выходя из дома.</p>
+        <a href="#contacts" class="btn">Записаться на бесплатный урок</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>О нашей школе</h2>
+        <p>Мы обучаем шахматам с нуля до профессионального уровня. Наши методики сочетают классическую шахматную теорию и интерактивные онлайн-практики.</p>
+      </div>
+    </section>
+
+    <section id="levels">
+      <div class="container">
+        <h2>Уровни обучения</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Начинающий</h3>
+            <p>Изучение правил, ходов фигур, базовых матовых комбинаций и простых тактических приемов.</p>
+          </article>
+          <article class="card">
+            <h3>Средний</h3>
+            <p>Глубокий анализ дебютов, пешечных структур, эндшпиля и позиционной игры.</p>
+          </article>
+          <article class="card">
+            <h3>Продвинутый</h3>
+            <p>Подготовка к квалификационным турнирам, анализ партий гроссмейстеров и расчёт сложных вариантов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trainers">
+      <div class="container">
+        <h2>Наши тренеры</h2>
+        <div class="grid-2">
+          <article class="card-trainer">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300" alt="Фото тренера по шахматам" width="300" height="200">
+            <h3>Алексей Смирнов</h3>
+            <p>Мастер спорта по шахматам, стаж преподавания 8 лет.</p>
+          </article>
+          <article class="card-trainer">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300" alt="Фото женского тренера по шахматам" width="300" height="200">
+            <h3>Динара Сатпаева</h3>
+            <p>Международный мастер WIM, призер национальных чемпионатов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="container">
+        <h2>Запись на пробный урок</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required placeholder="Маржан">
+          </div>
+          <div class="form-group">
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required placeholder="example@mail.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Сообщение / Уровень подготовки:</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Расскажите о своем опыте игры..."></textarea>
+          </div>
+          <button type="submit" class="btn">Отправить заявку</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Онлайн-школа шахмат Orynbek. Все права защищены.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
