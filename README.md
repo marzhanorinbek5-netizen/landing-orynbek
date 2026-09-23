@@ -15,7 +15,7 @@ Bootstrap 5 — это отличный фреймворк для быстрог
 Скриншоты адаптивности для трех точек останова (Breakpoints):
 
 ### Mobile (375px)
-![Mobile 375px](screenshots/375px.png)
+![Mobile 375px](screenshots/365px.png)
 
 ### Tablet (768px)
 ![Tablet 768px](screenshots/768px.png)
