@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChessOnline — О школе</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- Меню -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html">
+        <i class="bi bi-controller me-2"></i>ChessOnline
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fs-5">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">О школе</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Курсы</a></li>
+          <li class="nav-item"><a class="nav-link" href="trainers.html">Тренеры</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+        </ul>
+        <a href="contacts.html" class="btn btn-primary ms-lg-4 mt-3 mt-lg-0">Записаться</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <h1 class="fw-bold mb-4">О нашей академии</h1>
+    <p class="lead text-secondary">
+      Академия ChessOnline основана с целью популяризации шахматного искусства и развития аналитического мышления среди учеников всех возрастов.
+    </p>
+
+    <!-- Блок для твоих личных фотографий -->
+    <div class="my-5">
+      <h3 class="fw-bold mb-4">Галерея и атмосфера нашей школы</h3>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="user-photo-placeholder text-center">
+            <img src="https://picsum.photos/400/300?random=11" id="my-photo-1" class="img-fluid rounded" alt="Мое фото 1">
+            <p class="mt-2 text-muted small">Фото 1 (Сюда добавим твоё)</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="user-photo-placeholder text-center">
+            <img src="https://picsum.photos/400/300?random=12" id="my-photo-2" class="img-fluid rounded" alt="Мое фото 2">
+            <p class="mt-2 text-muted small">Фото 2 (Сюда добавим твоё)</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="user-photo-placeholder text-center">
+            <img src="https://picsum.photos/400/300?random=13" id="my-photo-3" class="img-fluid rounded" alt="Мое фото 3">
+            <p class="mt-2 text-muted small">Фото 3 (Сюда добавим твоё)</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="user-photo-placeholder text-center">
+            <img src="https://picsum.photos/400/300?random=14" id="my-photo-4" class="img-fluid rounded" alt="Мое фото 4">
+            <p class="mt-2 text-muted small">Фото 4 (Сюда добавим твоё)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-center text-secondary py-4 border-top border-secondary mt-auto">
+    <div class="container">
+      <p class="mb-0">&copy; 2026 ChessOnline. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+</body>
+</html>
