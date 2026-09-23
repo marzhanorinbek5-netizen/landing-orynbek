@@ -1,12 +1,11 @@
-/* Переопределение переменных Bootstrap */
+/* Переопределение Bootstrap CSS variables (по заданию) */
 :root {
   --bs-primary: #6366f1;
-  --bs-primary-rgb: 99, 102, 241;
-  --bs-body-bg: #0f172a;
-  --bs-body-color: #f8fafc;
+  --bs-primary-hover: #4f46e5;
+  --bs-body-bg: #0b0f19;
+  --bs-body-color: #f1f5f9;
 }
 
-/* Плавный скролл по всей странице */
 html {
   scroll-behavior: smooth;
 }
@@ -14,61 +13,114 @@ html {
 body {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Эффектные карточки */
-.custom-card {
-  background-color: #1e293b;
-  border: 1px solid #334155;
+/* Навигация */
+.custom-nav {
+  background-color: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
+
+/* Градиенты и бэджи */
+.text-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-soft {
+  background-color: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.section-dark {
+  background-color: #111827;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Стеклянные карточки (Glassmorphism) */
+.glass-card {
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.custom-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.25);
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
 .card-img-top {
-  height: 220px;
+  height: 200px;
   object-fit: cover;
 }
 
-/* Главная картинка баннера */
-.hero-img {
-  max-width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  border: 1px solid #334155;
-}
-
-/* Красивая рамка для твоих фотографий в галерее */
-.user-gallery-img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
+/* Галерея */
+.gallery-card {
   border-radius: 16px;
-  border: 1px solid #334155;
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 240px;
 }
 
-.user-gallery-img:hover {
-  transform: scale(1.03);
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-/* Форма записи */
-.form-control, .form-select {
-  background-color: #1e293b;
-  border: 1px solid #334155;
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Тренеры */
+.trainer-avatar {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--bs-primary);
+}
+
+/* Формы */
+.custom-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
   padding: 12px 16px;
+  border-radius: 8px;
 }
 
-.form-control:focus, .form-select:focus {
-  background-color: #1e293b;
+.custom-input:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--bs-primary);
   color: #fff;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+  box-shadow: none;
+}
+
+.icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background-color: rgba(99, 102, 241, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.border-glass {
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
