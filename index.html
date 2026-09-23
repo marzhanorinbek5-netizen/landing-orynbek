@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChessOnline — Шахматная Академия</title>
+  <title>ChessOnline — Международная Шахматная Академия</title>
   
   <!-- Bootstrap 5 CSS via CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,15 +14,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* Переопределение переменных Bootstrap 5 */
     :root {
-      --bs-body-bg: #090a0f;
+      --bs-body-bg: #0b0d14;
       --bs-body-color: #f3f4f6;
       --bs-primary: #6366f1;
-      --bs-primary-rgb: 99, 102, 241;
-      --bs-card-bg: rgba(22, 26, 38, 0.75);
-      --bs-card-color: #f3f4f6;
-      --bs-border-color: rgba(255, 255, 255, 0.1);
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      --card-bg: rgba(22, 27, 42, 0.85);
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
@@ -31,45 +28,45 @@
     }
 
     body {
-      background-color: #090a0f;
+      background-color: var(--bs-body-bg);
       color: #f3f4f6;
       overflow-x: hidden;
     }
 
-    /* Навигация */
+    /* Glassmorphism Navbar */
     .navbar {
-      background: rgba(9, 10, 15, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
+      background: rgba(11, 13, 20, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .logo-icon {
-      background: linear-gradient(135deg, #6366f1, #a855f7);
-      width: 40px;
-      height: 40px;
+      background: var(--accent-gradient);
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
       border-radius: 12px;
       color: #fff;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      font-size: 1.3rem;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
     }
 
-    /* Кнопки */
+    /* Buttons */
     .btn-gradient {
-      background: linear-gradient(135deg, #6366f1, #a855f7);
+      background: var(--accent-gradient);
       color: #ffffff;
       border: none;
+      font-weight: 600;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
     }
 
     .btn-gradient:hover {
-      background: linear-gradient(135deg, #4f46e5, #9333ea);
+      background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
       color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
     }
 
     .btn-outline-custom {
@@ -77,83 +74,71 @@
       color: #ffffff;
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(5px);
+      font-weight: 600;
       transition: all 0.3s ease;
     }
 
     .btn-outline-custom:hover {
       border-color: #6366f1;
-      background: rgba(99, 102, 241, 0.1);
+      background: rgba(99, 102, 241, 0.15);
       color: #ffffff;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    /* Карточки */
-    .card {
-      background-color: rgba(22, 26, 38, 0.75);
-      backdrop-filter: blur(10px);
+    /* Cards */
+    .card-custom {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.3s ease;
-      color: #f3f4f6;
+      border-radius: 20px;
+      transition: all 0.35s ease;
     }
 
-    .card:hover {
+    .card-custom:hover {
       transform: translateY(-8px);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      border-color: rgba(99, 102, 241, 0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     }
 
-    /* Тренеры - фото и стили */
-    .trainer-card {
+    /* Trainer Card Styling */
+    .trainer-avatar-container {
       position: relative;
-      overflow: hidden;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 1.5rem;
     }
 
-    .trainer-img-wrapper {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto;
-      border-radius: 50%;
-      padding: 4px;
-      background: linear-gradient(135deg, #6366f1, #a855f7);
-      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
-    }
-
-    .trainer-img {
+    .trainer-avatar {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
-      background-color: #1e2333;
+      border: 3px solid transparent;
+      background: linear-gradient(135deg, #6366f1, #a855f7) border-box;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
     }
 
-    .badge-rating {
-      background: rgba(245, 158, 11, 0.15);
-      color: #f59e0b;
-      border: 1px solid rgba(245, 158, 11, 0.3);
+    .trainer-badge {
+      position: absolute;
+      bottom: -5px;
+      right: 0;
+      background: #1e2338;
+      border: 1px solid #6366f1;
+      color: #a855f7;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-weight: 700;
     }
 
-    /* Форма */
-    .form-control {
-      background-color: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.15);
-      color: #fff;
-    }
-
-    .form-control:focus {
-      background-color: rgba(255, 255, 255, 0.08);
-      border-color: #6366f1;
-      color: #fff;
-      box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
-    }
-
-    /* Шахматная 3D-доска */
+    /* 3D Chess Board */
     .board-container {
       width: 320px;
       height: 320px;
       transform: rotateX(20deg) rotateZ(-10deg);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      background: rgba(22, 26, 38, 0.8);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+      background: rgba(22, 27, 42, 0.9);
+      border-radius: 24px;
     }
 
     .chess-grid {
@@ -169,8 +154,8 @@
       place-items: center;
     }
 
-    .cell.dark { background: rgba(99, 102, 241, 0.2); }
-    .cell.light { background: rgba(255, 255, 255, 0.03); }
+    .cell.dark { background: rgba(99, 102, 241, 0.25); }
+    .cell.light { background: rgba(255, 255, 255, 0.04); }
 
     .puck {
       width: 44px;
@@ -179,67 +164,60 @@
       display: grid;
       place-items: center;
       font-size: 1.4rem;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.6);
       transition: transform 0.3s ease;
     }
 
     .puck:hover {
-      transform: translateY(-6px) scale(1.05);
+      transform: translateY(-6px) scale(1.08);
     }
 
     .puck-white {
-      background: linear-gradient(135deg, #ffffff, #d1d5db);
+      background: linear-gradient(135deg, #ffffff, #e5e7eb);
       color: #111827;
     }
 
     .puck-black {
       background: linear-gradient(135deg, #374151, #111827);
       color: #f59e0b;
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      border: 1px solid rgba(245, 158, 11, 0.4);
     }
 
-    /* Аккордеон FAQ */
-    .accordion-item {
-      background-color: rgba(22, 26, 38, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Input Controls */
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.12);
       color: #fff;
+      border-radius: 12px;
     }
 
-    .accordion-button {
-      background-color: transparent;
+    .form-control:focus {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: #6366f1;
       color: #fff;
-      font-weight: 600;
-    }
-
-    .accordion-button:not(.collapsed) {
-      background-color: rgba(99, 102, 241, 0.15);
-      color: #6366f1;
-    }
-
-    .accordion-button::after {
-      filter: invert(1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <!-- 1. NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4" href="#">
         <span class="logo-icon">♟</span>
-        <span class="text-white">Chess<span style="color: #6366f1;">Online</span></span>
+        <span>Chess<span style="color: #6366f1;">Online</span></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-          <li class="nav-item"><a class="nav-link text-light" href="#about">О школе</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="#levels">Обучение</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#about">О нас</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#features">Преимущества</a></li>
           <li class="nav-item"><a class="nav-link text-light" href="#trainers">Тренеры</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#levels">Обучение</a></li>
           <li class="nav-item"><a class="nav-link text-light" href="#reviews">Отзывы</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="#faq">FAQ</a></li>
           <li class="nav-item mt-2 mt-lg-0">
             <a class="btn btn-gradient px-4 py-2 rounded-pill" href="#contacts">Записаться</a>
           </li>
@@ -248,19 +226,19 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="min-vh-100 d-flex align-items-center pt-5 mt-4">
+  <!-- 2. HERO SECTION -->
+  <section class="min-vh-100 d-flex align-items-center pt-5">
     <div class="container pt-5">
       <div class="row align-items-center gy-5">
         <div class="col-12 col-lg-6 text-center text-lg-start">
           <div class="badge border border-secondary text-light px-3 py-2 rounded-pill mb-3" style="background: rgba(255,255,255,0.05);">
-            <span>♛</span> Академия премиум-уровня
+            <span>♛</span> Международная Академия Шахмат
           </div>
-          <h1 class="display-4 fw-bold mb-3 text-white">Шахматы — <span style="color: #6366f1;">искусство</span> побеждать</h1>
-          <p class="lead text-secondary mb-4">Онлайн-обучение шахматам с Маржан Орынбек и международными гроссмейстерами. Развивайте стратегическое мышление и побеждайте в турнирах.</p>
+          <h1 class="display-3 fw-bold mb-3 text-white">Шахматы — <span style="color: #6366f1;">искусство</span> побеждать</h1>
+          <p class="lead text-secondary mb-4">Онлайн-обучение под руководством международных мастеров и гроссмейстеров. Прокачай логику, стратегию и побеждай на турнирах.</p>
           <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start mb-5">
-            <a href="#contacts" class="btn btn-gradient btn-lg px-4 rounded-pill">Записаться на урок →</a>
-            <a href="#about" class="btn btn-outline-custom btn-lg px-4 rounded-pill">Узнать больше</a>
+            <a href="#contacts" class="btn btn-gradient btn-lg px-4 rounded-pill">Пробный урок бесплатно →</a>
+            <a href="#trainers" class="btn btn-outline-custom btn-lg px-4 rounded-pill">Наши тренеры</a>
           </div>
           <div class="row text-center text-lg-start border-top border-secondary border-opacity-25 pt-4 gy-3">
             <div class="col-4">
@@ -268,19 +246,18 @@
               <small class="text-secondary">лет опыта</small>
             </div>
             <div class="col-4">
-              <h3 class="fw-bold mb-0 text-white">500+</h3>
+              <h3 class="fw-bold mb-0 text-white">1200+</h3>
               <small class="text-secondary">учеников</small>
             </div>
             <div class="col-4">
-              <h3 class="fw-bold mb-0 text-white">100%</h3>
-              <small class="text-secondary">онлайн</small>
+              <h3 class="fw-bold mb-0 text-white">15+</h3>
+              <small class="text-secondary">гроссмейстеров</small>
             </div>
           </div>
         </div>
 
-        <!-- Visual Chess Board -->
         <div class="col-12 col-lg-6 d-flex justify-content-center">
-          <div class="board-container p-3 rounded-4 border">
+          <div class="board-container p-3 rounded-4 border border-secondary border-opacity-25">
             <div class="chess-grid rounded-3 overflow-hidden">
               <div class="cell light"><div class="puck puck-black">♜</div></div>
               <div class="cell dark"></div>
@@ -308,208 +285,254 @@
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- 3. ABOUT SECTION -->
   <section id="about" class="py-5">
     <div class="container py-5">
-      <div class="text-center mb-5">
-        <span style="color: #6366f1;" class="text-uppercase fw-bold">О школе</span>
-        <h2 class="fw-bold display-6 mt-2 text-white">Учимся думать на <span style="color: #6366f1;">несколько ходов</span> вперёд</h2>
-      </div>
-      
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 border-0 rounded-4">
-            <div class="card-body">
-              <div class="fs-1 mb-3">♟</div>
-              <h4 class="card-title fw-bold text-white">Индивидуальный подход</h4>
-              <p class="card-text text-secondary">Персональная программа, адаптированная под скорость мышления и цели каждого ученика.</p>
+      <div class="row align-items-center gy-5">
+        <div class="col-12 col-lg-6">
+          <span style="color: #6366f1;" class="text-uppercase fw-bold">О нашей академии</span>
+          <h2 class="display-5 fw-bold text-white mt-2 mb-4">Мы не просто учим играть, мы формируем <span style="color: #6366f1;">мышление</span></h2>
+          <p class="text-secondary lead mb-4">ChessOnline была основана в 2018 году с целью сделать профессиональное шахматное образование доступным каждому из любой точки мира.</p>
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="p-3 rounded-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                <h4 class="fw-bold text-white mb-1">FIDE</h4>
+                <p class="text-secondary small mb-0">Официальная методика Международной шахматной федерации</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-3 rounded-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                <h4 class="fw-bold text-white mb-1">24/7</h4>
+                <p class="text-secondary small mb-0">Интерактивная онлайн-платформа для тренировок и турниров</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 border-0 rounded-4">
-            <div class="card-body">
-              <div class="fs-1 mb-3">♞</div>
-              <h4 class="card-title fw-bold text-white">Практика и стратегия</h4>
-              <p class="card-text text-secondary">Разбор гроссмейстерских партий, отработка тактических комбинаций и принятие решений.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 border-0 rounded-4">
-            <div class="card-body">
-              <div class="fs-1 mb-3">♛</div>
-              <h4 class="card-title fw-bold text-white">Результат</h4>
-              <p class="card-text text-secondary">Плавный переход от базовых правил до участия в официальных турнирах.</p>
-            </div>
+        <div class="col-12 col-lg-6">
+          <div class="card-custom p-4 text-center">
+            <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&auto=format&fit=crop&q=80" alt="Шахматы" class="img-fluid rounded-4 mb-3">
+            <h5 class="fw-bold text-white mb-0">Интерактивный разбор каждой партии</h5>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRAINERS SECTION (НОВАЯ СЕКЦИЯ С ТРЕНЕРАМИ И ФОТО) -->
-  <section id="trainers" class="py-5" style="background: rgba(255, 255, 255, 0.01);">
+  <!-- 4. FEATURES SECTION -->
+  <section id="features" class="py-5" style="background: rgba(255,255,255,0.01);">
     <div class="container py-5">
       <div class="text-center mb-5">
-        <span style="color: #6366f1;" class="text-uppercase fw-bold">Команда</span>
-        <h2 class="fw-bold display-6 mt-2 text-white">Наши <span style="color: #6366f1;">тренеры</span> по шахматам</h2>
-        <p class="text-secondary max-w-xl mx-auto">Опытные наставники, гроссмейстеры и действующие чемпионы</p>
+        <span style="color: #6366f1;" class="text-uppercase fw-bold">Почему мы</span>
+        <h2 class="display-6 fw-bold text-white mt-2">6 причин учиться в <span style="color: #6366f1;">ChessOnline</span></h2>
       </div>
 
-      <div class="row g-4 justify-content-center">
-        <!-- Тренер 1 -->
+      <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 rounded-4 text-center trainer-card">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="trainer-img-wrapper mb-3">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80" alt="Маржан Орынбек" class="trainer-img">
-              </div>
-              <span class="badge badge-rating px-3 py-1 rounded-pill mb-2">★ FIDE 2150</span>
-              <h4 class="fw-bold text-white mb-1">Маржан Орынбек</h4>
-              <p style="color: #6366f1;" class="small fw-semibold mb-3">Основатель академии / Мастер FIDE</p>
-              <p class="text-secondary small mb-4">Более 8 лет преподавания шахмат. Подготовила более 30 призёров республиканских турниров.</p>
-              <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill mt-auto">Записаться к Маржан</a>
+          <div class="card-custom p-4 h-100">
+            <div class="fs-1 mb-3">♔</div>
+            <h4 class="fw-bold text-white mb-2">Гроссмейстеры</h4>
+            <p class="text-secondary">Уроки проводят обладатели международных званий и действующих рейтингов FIDE.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card-custom p-4 h-100">
+            <div class="fs-1 mb-3">🎯</div>
+            <h4 class="fw-bold text-white mb-2">Персональный план</h4>
+            <p class="text-secondary">Индивидуальная программа под ваши слабые и сильные стороны в игре.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card-custom p-4 h-100">
+            <div class="fs-1 mb-3">💻</div>
+            <h4 class="fw-bold text-white mb-2">Удобная платформа</h4>
+            <p class="text-secondary">Интерактивная виртуальная доска с мгновенным видеоанализом от тренера.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card-custom p-4 h-100">
+            <div class="fs-1 mb-3">🏆</div>
+            <h4 class="fw-bold text-white mb-2">Внутренние турниры</h4>
+            <p class="text-secondary">Еженедельные соревнования с призами и официальным просчётом рейтинга.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card-custom p-4 h-100">
+            <div class="fs-1 mb-3">📊</div>
+            <h4 class="fw-bold text-white mb-2">Анализ партий</h4>
+            <p class="text-secondary">Подробные разборы ваших сыгранных партий с помощью движка Stockfish 16.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card-custom p-4 h-100">
+            <div class="fs-1 mb-3">🤝</div>
+            <h4 class="fw-bold text-white mb-2">Шахматное сообщество</h4>
+            <p class="text-secondary">Закрытый клуб учеников для общения, поиска соперников и совместного анализа.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TRAINERS SECTION (4 РАЗНЫХ ТРЕНЕРА С УНИКАЛЬНЫМИ ФОТО) -->
+  <section id="trainers" class="py-5">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <span style="color: #6366f1;" class="text-uppercase fw-bold">Тренеры</span>
+        <h2 class="display-6 fw-bold text-white mt-2">Учитесь у <span style="color: #6366f1;">лучших мастеров</span></h2>
+        <p class="text-secondary">Наши наставники — действующие чемпионы и опытные педагоги</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Тренер 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-custom p-4 text-center h-100">
+            <div class="trainer-avatar-container">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" alt="Маржан Орынбек" class="trainer-avatar">
+              <span class="trainer-badge">WFM</span>
             </div>
+            <h4 class="fw-bold text-white mb-1">Маржан Орынбек</h4>
+            <p style="color: #6366f1;" class="small fw-semibold mb-3">Главный тренер / Основатель</p>
+            <p class="text-secondary small mb-4">Мастер FIDE. Опыт преподавания 8+ лет. Автор методик для детей и взрослых.</p>
+            <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill mt-auto">Записаться</a>
           </div>
         </div>
 
         <!-- Тренер 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 rounded-4 text-center trainer-card">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="trainer-img-wrapper mb-3">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80" alt="Арман Сатов" class="trainer-img">
-              </div>
-              <span class="badge badge-rating px-3 py-1 rounded-pill mb-2">★ GM (Гроссмейстер)</span>
-              <h4 class="fw-bold text-white mb-1">Арман Сатов</h4>
-              <p style="color: #6366f1;" class="small fw-semibold mb-3">Международный гроссмейстер</p>
-              <p class="text-secondary small mb-4">Специалист по глубокой дебютной подготовке и эндшпилю. Тренер сборной юношей.</p>
-              <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill mt-auto">Записаться к Арману</a>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-custom p-4 text-center h-100">
+            <div class="trainer-avatar-container">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80" alt="Александр Громов" class="trainer-avatar">
+              <span class="trainer-badge">GM</span>
             </div>
+            <h4 class="fw-bold text-white mb-1">Александр Громов</h4>
+            <p style="color: #6366f1;" class="small fw-semibold mb-3">Международный гроссмейстер</p>
+            <p class="text-secondary small mb-4">Рейтинг FIDE 2580. Эксперт по сицилианской защите и эндшпильной технике.</p>
+            <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill mt-auto">Записаться</a>
           </div>
         </div>
 
         <!-- Тренер 3 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 rounded-4 text-center trainer-card">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="trainer-img-wrapper mb-3">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80" alt="Динара Касымова" class="trainer-img">
-              </div>
-              <span class="badge badge-rating px-3 py-1 rounded-pill mb-2">★ WIM (Мастер спорта)</span>
-              <h4 class="fw-bold text-white mb-1">Динара Касымова</h4>
-              <p style="color: #6366f1;" class="small fw-semibold mb-3">Детский тренер-психолог</p>
-              <p class="text-secondary small mb-4">Обучает детей от 5 лет в игровой форме. Развивает концентрацию внимания и логику.</p>
-              <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill mt-auto">Записаться к Динаре</a>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-custom p-4 text-center h-100">
+            <div class="trainer-avatar-container">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80" alt="Елена Белова" class="trainer-avatar">
+              <span class="trainer-badge">WIM</span>
             </div>
+            <h4 class="fw-bold text-white mb-1">Елена Белова</h4>
+            <p style="color: #6366f1;" class="small fw-semibold mb-3">Детский психолог-тренер</p>
+            <p class="text-secondary small mb-4">Специализируется на детском обучении от 5 до 12 лет. Превращает уроки в игру.</p>
+            <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill mt-auto">Записаться</a>
+          </div>
+        </div>
+
+        <!-- Тренер 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-custom p-4 text-center h-100">
+            <div class="trainer-avatar-container">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80" alt="Руслан Алиев" class="trainer-avatar">
+              <span class="trainer-badge">IM</span>
+            </div>
+            <h4 class="fw-bold text-white mb-1">Руслан Алиев</h4>
+            <p style="color: #6366f1;" class="small fw-semibold mb-3">Международный мастер</p>
+            <p class="text-secondary small mb-4">Чемпион страны среди юношей. Готовит разрядников к профессиональным турнирам.</p>
+            <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill mt-auto">Записаться</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LEVELS SECTION -->
-  <section id="levels" class="py-5">
+  <!-- 6. LEVELS SECTION -->
+  <section id="levels" class="py-5" style="background: rgba(255,255,255,0.01);">
     <div class="container py-5">
       <div class="text-center mb-5">
-        <span style="color: #6366f1;" class="text-uppercase fw-bold">Обучение</span>
-        <h2 class="fw-bold display-6 mt-2 text-white">Выберите свой <span style="color: #6366f1;">уровень</span></h2>
+        <span style="color: #6366f1;" class="text-uppercase fw-bold">Курсы</span>
+        <h2 class="display-6 fw-bold text-white mt-2">Программы <span style="color: #6366f1;">обучения</span></h2>
       </div>
 
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 border-0 rounded-4">
-            <div class="card-body d-flex flex-column">
-              <div class="fs-1 mb-2">♙</div>
-              <h3 class="fw-bold mb-3 text-white">Начинающий</h3>
-              <p class="text-secondary mb-4">Первый шаг в мир шахмат. Изучаем правила и базовую логику.</p>
-              <ul class="list-unstyled text-secondary mb-4 mt-auto">
-                <li class="mb-2">✓ Правила и движения фигур</li>
-                <li class="mb-2">✓ Основы развития позиции</li>
-                <li class="mb-2">✓ Простые комбинации</li>
-              </ul>
-              <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill">Начать обучение</a>
-            </div>
+          <div class="card-custom p-4 h-100 d-flex flex-column">
+            <div class="fs-1 mb-2">♙</div>
+            <h3 class="fw-bold text-white mb-3">Начинающий</h3>
+            <p class="text-secondary mb-4">Полное освоение правил, ходов фигур и простых матовых комбинаций.</p>
+            <ul class="list-unstyled text-secondary mb-4 mt-auto">
+              <li class="mb-2">✓ Правила и рокировка</li>
+              <li class="mb-2">✓ Базовые матовые схемы</li>
+              <li class="mb-2">✓ Тактика: вилки и связки</li>
+            </ul>
+            <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill">Начать курс</a>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 rounded-4" style="border: 2px solid #6366f1;">
-            <div class="card-body d-flex flex-column">
-              <span class="badge mb-3" style="background-color: #6366f1; width: fit-content;">ПОПУЛЯРНЫЙ</span>
-              <div class="fs-1 mb-2">♘</div>
-              <h3 class="fw-bold mb-3 text-white">Средний</h3>
-              <p class="text-secondary mb-4">Глубокое понимание стратегии и дебютных схем.</p>
-              <ul class="list-unstyled text-secondary mb-4 mt-auto">
-                <li class="mb-2">✓ Дебютная подготовка</li>
-                <li class="mb-2">✓ Пешечные структуры</li>
-                <li class="mb-2">✓ Позиционная борьба</li>
-              </ul>
-              <a href="#contacts" class="btn btn-gradient w-100 rounded-pill">Начать обучение</a>
-            </div>
+          <div class="card-custom p-4 h-100 d-flex flex-column" style="border: 2px solid #6366f1;">
+            <span class="badge mb-3" style="background: #6366f1; width: fit-content;">ПОПУЛЯРНЫЙ</span>
+            <div class="fs-1 mb-2">♘</div>
+            <h3 class="fw-bold text-white mb-3">Любитель (1000-1500)</h3>
+            <p class="text-secondary mb-4">Глубокий анализ дебютов, миттельшпиля и расчет вариантов на 3-4 хода вперед.</p>
+            <ul class="list-unstyled text-secondary mb-4 mt-auto">
+              <li class="mb-2">✓ Дебютный репертуар</li>
+              <li class="mb-2">✓ Пешечные структуры</li>
+              <li class="mb-2">✓ Стратегия позиционной игры</li>
+            </ul>
+            <a href="#contacts" class="btn btn-gradient w-100 rounded-pill">Начать курс</a>
           </div>
         </div>
+
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 p-4 border-0 rounded-4">
-            <div class="card-body d-flex flex-column">
-              <div class="fs-1 mb-2">♕</div>
-              <h3 class="fw-bold mb-3 text-white">Продвинутый</h3>
-              <p class="text-secondary mb-4">Сложные расчеты и подготовка к соревнованиям.</p>
-              <ul class="list-unstyled text-secondary mb-4 mt-auto">
-                <li class="mb-2">✓ Расчёт вариантов</li>
-                <li class="mb-2">✓ Анализ партий</li>
-                <li class="mb-2">✓ Подготовка к турнирам</li>
-              </ul>
-              <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill">Начать обучение</a>
-            </div>
+          <div class="card-custom p-4 h-100 d-flex flex-column">
+            <div class="fs-1 mb-2">♕</div>
+            <h3 class="fw-bold text-white mb-3">Продвинутый (1500+)</h3>
+            <p class="text-secondary mb-4">Подготовка к турнирам, эндшпильная техника гроссмейстерского уровня.</p>
+            <ul class="list-unstyled text-secondary mb-4 mt-auto">
+              <li class="mb-2">✓ Глубокий расчет вариантов</li>
+              <li class="mb-2">✓ Точные ладейные эндшпили</li>
+              <li class="mb-2">✓ Психология турнирной борьбы</li>
+            </ul>
+            <a href="#contacts" class="btn btn-outline-custom w-100 rounded-pill">Начать курс</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS SECTION (ОТЗЫВЫ) -->
-  <section id="reviews" class="py-5" style="background: rgba(255, 255, 255, 0.01);">
+  <!-- 7. REVIEWS SECTION -->
+  <section id="reviews" class="py-5">
     <div class="container py-5">
       <div class="text-center mb-5">
         <span style="color: #6366f1;" class="text-uppercase fw-bold">Отзывы</span>
-        <h2 class="fw-bold display-6 mt-2 text-white">Что говорят <span style="color: #6366f1;">наши ученики</span></h2>
+        <h2 class="display-6 fw-bold text-white mt-2">Истории успеха <span style="color: #6366f1;">наших учеников</span></h2>
       </div>
 
       <div class="row g-4">
         <div class="col-12 col-md-4">
-          <div class="card p-4 rounded-4 h-100">
-            <div class="card-body">
-              <div class="text-warning mb-3">★★★★★</div>
-              <p class="text-secondary mb-4">«За 3 месяца занятий с Маржан я поднял свой рейтинг на Lichess с 1200 до 1600! Занятия проходят очень легко и с юмором.»</p>
-              <div class="d-flex align-items-center gap-3">
-                <div class="fw-bold text-white">Айдар К.</div>
-                <small class="text-secondary">• Студент</small>
-              </div>
+          <div class="card-custom p-4 h-100">
+            <div class="text-warning mb-3">★★★★★</div>
+            <p class="text-secondary mb-4">«Маржан помогла мне понять шахматы как красивую стратегию. За полгода рейтинг поднялся с 1100 до 1550 на Lichess!»</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="fw-bold text-white">Арнур К.</div>
+              <small class="text-secondary">• Студент</small>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card p-4 rounded-4 h-100">
-            <div class="card-body">
-              <div class="text-warning mb-3">★★★★★</div>
-              <p class="text-secondary mb-4">«Отдали сына (7 лет) к Динаре. Он в восторге! Вместо мультиков теперь просит разыграть с ним очередную шахматную партию.»</p>
-              <div class="d-flex align-items-center gap-3">
-                <div class="fw-bold text-white">Елена М.</div>
-                <small class="text-secondary">• Мама ученика</small>
-              </div>
+          <div class="card-custom p-4 h-100">
+            <div class="text-warning mb-3">★★★★★</div>
+            <p class="text-secondary mb-4">«Занимаемся с Русланом Алиевым. Сыну 8 лет, уже занял 2-е место на районном турнире! Очень благодарим академию.»</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="fw-bold text-white">Айгуль М.</div>
+              <small class="text-secondary">• Мама ученика</small>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card p-4 rounded-4 h-100">
-            <div class="card-body">
-              <div class="text-warning mb-3">★★★★★</div>
-              <p class="text-secondary mb-4">«Занимаюсь с гроссмейстером Арманом. Очень сильный разбор эндшпилей. Помогло выполнить норму первого разряда!»</p>
-              <div class="d-flex align-items-center gap-3">
-                <div class="fw-bold text-white">Тимур В.</div>
-                <small class="text-secondary">• Разрядник</small>
-              </div>
+          <div class="card-custom p-4 h-100">
+            <div class="text-warning mb-3">★★★★★</div>
+            <p class="text-secondary mb-4">«Отличные разборы партий с Александром Громовым. Узнал тонкости, о которых не пишут в стандартных книгах.»</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="fw-bold text-white">Данияр Т.</div>
+              <small class="text-secondary">• Взрослый любитель</small>
             </div>
           </div>
         </div>
@@ -517,74 +540,20 @@
     </div>
   </section>
 
-  <!-- FAQ SECTION (АККОРДЕОН) -->
-  <section id="faq" class="py-5">
-    <div class="container py-5">
-      <div class="text-center mb-5">
-        <span style="color: #6366f1;" class="text-uppercase fw-bold">Вопросы</span>
-        <h2 class="fw-bold display-6 mt-2 text-white">Часто задаваемые <span style="color: #6366f1;">вопросы</span></h2>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
-          <div class="accordion" id="faqAccordion">
-            <div class="accordion-item rounded-3 mb-3 overflow-hidden">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                  Как проходят онлайн-уроки?
-                </button>
-              </h2>
-              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body text-secondary">
-                  Занятия проходят в Zoom или Google Meet с использованием интерактивной шахматной доски. Вы можете видеть тренера и выполнять упражнения в режиме реального времени.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item rounded-3 mb-3 overflow-hidden">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                  Подходит ли курс для полных новичков?
-                </button>
-              </h2>
-              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body text-secondary">
-                  Да! Наш курс «Начинающий» создаван специально для тех, кто никогда не держал шахматные фигуры в руках.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item rounded-3 mb-3 overflow-hidden">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                  С какого возраста принимаются дети?
-                </button>
-              </h2>
-              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body text-secondary">
-                  Мы берем детей от 5 лет. Для них разработана специальная игровая методика обучения.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTS SECTION -->
+  <!-- 8. CONTACTS SECTION -->
   <section id="contacts" class="py-5">
     <div class="container py-5">
-      <div class="card border-0 rounded-5 p-4 p-lg-5" style="background: rgba(22, 26, 38, 0.9); border: 1px solid rgba(255,255,255,0.1);">
+      <div class="card-custom p-4 p-lg-5">
         <div class="row g-5 align-items-center">
           <div class="col-12 col-lg-6">
-            <span style="color: #6366f1;" class="text-uppercase fw-bold">Контакты</span>
-            <h2 class="display-6 fw-bold my-3 text-white">Сделай первый <span style="color: #6366f1;">ход</span></h2>
-            <p class="text-secondary mb-4">Оставь заявку, и мы свяжемся с тобой для подбора формата обучения и назначения бесплатного вводного урока.</p>
+            <span style="color: #6366f1;" class="text-uppercase fw-bold">Запись</span>
+            <h2 class="display-5 fw-bold my-3 text-white">Запишитесь на <span style="color: #6366f1;">бесплатный</span> урок</h2>
+            <p class="text-secondary mb-4">Оставьте заявку, и наш менеджер свяжется с вами в течение 15 минут для проведения пробного онлайн-урока.</p>
             <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="logo-icon">✉</div>
               <div>
-                <small class="text-secondary d-block">EMAIL</small>
-                <strong class="text-white">chessonline@mail.com</strong>
+                <small class="text-secondary d-block">СВЯЗЬ С НАМИ</small>
+                <strong class="text-white fs-5">chessonline@mail.com</strong>
               </div>
             </div>
           </div>
@@ -595,14 +564,18 @@
                 <input type="text" class="form-control form-control-lg" placeholder="Маржан" required>
               </div>
               <div class="mb-3">
-                <label class="form-label text-secondary">Электронная почта</label>
-                <input type="email" class="form-control form-control-lg" placeholder="example@mail.com" required>
+                <label class="form-label text-secondary">Телефон / WhatsApp</label>
+                <input type="tel" class="form-control form-control-lg" placeholder="+7 (700) 000-00-00" required>
               </div>
               <div class="mb-3">
-                <label class="form-label text-secondary">Расскажите о себе</label>
-                <textarea class="form-control form-control-lg" rows="3" placeholder="Ваш уровень и цели..." required></textarea>
+                <label class="form-label text-secondary">Ваш текущий уровень</label>
+                <select class="form-control form-control-lg text-white" style="background-color: #1e2338;">
+                  <option>Начинающий (с нуля)</option>
+                  <option>Любитель (знаю правила)</option>
+                  <option>Продвинутый (есть разряд)</option>
+                </select>
               </div>
-              <button type="submit" class="btn btn-gradient btn-lg w-100 rounded-pill">Отправить заявку →</button>
+              <button type="submit" class="btn btn-gradient btn-lg w-100 rounded-pill mt-2">Получить бесплатный урок →</button>
             </form>
           </div>
         </div>
@@ -613,7 +586,7 @@
   <!-- FOOTER -->
   <footer class="py-4 border-top border-secondary border-opacity-25 text-center">
     <div class="container">
-      <p class="text-secondary mb-0">© 2026 ChessOnline. Шахматная академия Маржан Орынбек.</p>
+      <p class="text-secondary mb-0">© 2026 ChessOnline. Международная шахматная академия Маржан Орынбек.</p>
     </div>
   </footer>
 
