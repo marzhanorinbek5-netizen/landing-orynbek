@@ -1,42 +1,34 @@
-/* Переопределение переменных Bootstrap CSS (Требование B) */
+/* Переопределение переменных Bootstrap */
 :root {
   --bs-primary: #6366f1;
+  --bs-primary-rgb: 99, 102, 241;
   --bs-body-bg: #0f172a;
   --bs-body-color: #f8fafc;
 }
 
+/* Плавный скролл по всей странице */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Стили галереи */
-.gallery-card {
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.gallery-img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Стили карточек */
+/* Эффектные карточки */
 .custom-card {
   background-color: #1e293b;
   border: 1px solid #334155;
   border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+}
+
+.custom-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.25);
 }
 
 .card-img-top {
@@ -44,17 +36,39 @@ body {
   object-fit: cover;
 }
 
+/* Главная картинка баннера */
 .hero-img {
   max-width: 100%;
   border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   border: 1px solid #334155;
-  object-fit: cover;
 }
 
+/* Красивая рамка для твоих фотографий в галерее */
+.user-gallery-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  transition: transform 0.3s ease;
+}
+
+.user-gallery-img:hover {
+  transform: scale(1.03);
+}
+
+/* Форма записи */
 .form-control, .form-select {
   background-color: #1e293b;
   border: 1px solid #334155;
   color: #fff;
   padding: 12px 16px;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #1e293b;
+  color: #fff;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
 }
