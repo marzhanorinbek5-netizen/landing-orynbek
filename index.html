@@ -3,29 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChessOnline — Маржан Орынбек</title>
+  <title>Шахматная Академия — Маржан Орынбек</title>
 
-  <!-- Bootstrap 5 CSS CDN -->
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Фон с мягким свечением -->
+  <div class="glow-bg"></div>
+
   <!-- НАВИГАЦИЯ -->
   <nav class="navbar navbar-expand-lg fixed-top custom-nav">
     <div class="container">
-      <a class="navbar-brand text-white fw-medium tracking-wide" href="#">CHESS<span class="text-secondary opacity-50">ONLINE</span></a>
+      <a class="navbar-brand fw-bold text-white d-flex align-items-center gap-2" href="#">
+        <span class="logo-icon"><i class="bi bi-suit-spade-fill"></i></span>
+        <span>CHESS<span class="text-accent">ACADEMY</span></span>
+      </a>
+      
       <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+        <i class="bi bi-list fs-2 text-white"></i>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto gap-lg-4 my-3 my-lg-0">
+        <ul class="navbar-nav ms-auto gap-lg-3 my-3 my-lg-0 fw-medium">
           <li class="nav-item"><a class="nav-link text-white-50" href="#about">О нас</a></li>
           <li class="nav-item"><a class="nav-link text-white-50" href="#gallery">Галерея</a></li>
           <li class="nav-item"><a class="nav-link text-white-50" href="#courses">Курсы</a></li>
           <li class="nav-item"><a class="nav-link text-white-50" href="#contacts">Контакты</a></li>
         </ul>
+        <a href="#contacts" class="btn btn-accent ms-lg-3 px-4 py-2">Записаться</a>
       </div>
     </div>
   </nav>
@@ -35,15 +46,19 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <p class="text-uppercase tracking-widest text-muted small mb-3">Авторская школа шахмат</p>
-
-          <h1 class="display-4 fw-light text-white mb-4">Искусство мыслить на шаг вперёд</h1>
-          <p class="text-secondary lead mb-4 fw-light">Развитие логики, стратегии и глубокого анализа для детей и взрослых.</p>
-          <a href="#contacts" class="btn btn-outline-light rounded-0 px-4 py-3 border-opacity-25 fs-6">Записаться на занятие</a>
+          <span class="badge badge-accent mb-3"><i class="bi bi-star-fill me-1"></i> Премиум Обучение</span>
+          <h1 class="display-3 fw-bold text-white mb-3">Искусство <span class="text-gradient">побеждать</span> на доске</h1>
+          <p class="text-light-50 fs-5 mb-4">
+            Развиваем стратегическое мышление и системную логику. Уроки от мастеров для детей и взрослых.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#contacts" class="btn btn-accent btn-lg px-4 py-3">Начать обучение</a>
+            <a href="#courses" class="btn btn-glass btn-lg px-4 py-3">Программы</a>
+          </div>
         </div>
         <div class="col-lg-6">
-          <div class="img-container">
-            <img src="images/hero.jpg" alt="Шахматы" class="img-fluid hero-image">
+          <div class="img-card-wrapper">
+            <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=1000&auto=format&fit=crop" alt="Шахматы" class="img-fluid rounded-4 main-hero-img">
           </div>
         </div>
       </div>
@@ -51,100 +66,112 @@
   </section>
 
   <!-- О НАС -->
-  <section class="py-5 border-top border-bottom border-dark" id="about">
+  <section class="py-5" id="about">
     <div class="container py-4">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5">
-          <h2 class="h3 fw-light text-white mb-3">Глубокий подход к обучению</h2>
-          <p class="text-secondary fs-6 mb-0">Мы учим не просто заучивать комбинации, а понимать логику каждого хода на доске.</p>
-        </div>
-        <div class="col-lg-7">
-          <div class="row g-4">
-            <div class="col-6">
-              <h3 class="display-6 fw-light text-white mb-1">8+</h3>
-              <p class="text-muted small">лет преподавательской практики</p>
+      <div class="glass-box p-4 p-md-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h2 class="fw-bold text-white fs-1 mb-3">Преимущества академии</h2>
+            <p class="text-light-50 fs-5 mb-4">Мы объединили классическую шахматную школу с интерактивными методиками обучения.</p>
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-circle"><i class="bi bi-trophy-fill text-accent"></i></div>
+              <div>
+                <h5 class="text-white mb-0 fw-semibold">Подготовка к турнирам</h5>
+                <p class="text-light-50 small mb-0">Участие в городских и международных соревнованиях.</p>
+              </div>
             </div>
-            <div class="col-6">
-              <h3 class="display-6 fw-light text-white mb-1">500+</h3>
-              <p class="text-muted small">учеников по всему миру</p>
-            </div>
+          </div>
+          <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461?q=80&w=800&auto=format&fit=crop" alt="Академия" class="img-fluid rounded-4 shadow-lg">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ГАЛЕРЕЯ -->
+  <!-- ГАЛЕРЕЯ (НАСТОЯЩИЕ КРАСИВЫЕ ФОТО) -->
   <section class="py-5" id="gallery">
     <div class="container py-4">
-      <div class="d-flex justify-content-between align-items-end mb-4">
-        <h2 class="h4 fw-light text-white mb-0">Атмосфера</h2>
-        <span class="text-muted small">01 / 04</span>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold fs-1 text-white">Атмосфера турниров</h2>
+        <p class="text-light-50">Фотографии с наших тренировок и соревнований</p>
       </div>
 
-      <div class="row g-3">
+      <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-3">
-          <div class="gallery-wrapper">
-            <img src="images/gallery1.jpg" alt="Фото 1" class="gallery-img">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?q=80&w=600&auto=format&fit=crop" alt="Галерея 1">
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
-          <div class="gallery-wrapper">
-            <img src="images/gallery2.jpg" alt="Фото 2" class="gallery-img">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?q=80&w=600&auto=format&fit=crop" alt="Галерея 2">
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
-          <div class="gallery-wrapper">
-            <img src="images/gallery3.jpg" alt="Фото 3" class="gallery-img">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=600&auto=format&fit=crop" alt="Галерея 3">
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
-          <div class="gallery-wrapper">
-            <img src="images/gallery4.jpg" alt="Фото 4" class="gallery-img">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?q=80&w=600&auto=format&fit=crop" alt="Галерея 4">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- КУРСЫ (Сетка col-12 col-md-6 col-lg-4 по заданию) -->
-  <section class="py-5 border-top border-dark" id="courses">
+  <!-- КУРСЫ (СЕТКА 3 КАРТОЧКИ: col-12 col-md-6 col-lg-4) -->
+  <section class="py-5" id="courses">
     <div class="container py-4">
-      <h2 class="h4 fw-light text-white mb-5">Программы</h2>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold fs-1 text-white">Курсы и программы</h2>
+        <p class="text-light-50">Выберите ваш уровень подготовки</p>
+      </div>
 
       <div class="row g-4">
+        <!-- Курс 1 -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card course-card h-100">
-            <img src="images/course1.jpg" class="card-img-top" alt="Базовый">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461?q=80&w=600&auto=format&fit=crop" class="card-img-top" alt="Старт">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
-              <p class="text-muted small mb-2">Уровень 1</p>
-              <h3 class="h5 fw-normal text-white mb-3">Основы и стратегия</h3>
-              <p class="text-secondary small mb-4">Базовые правила, принципы дебюта и фундаментальные тактические приемы.</p>
-              <a href="#contacts" class="text-white text-decoration-none small mt-auto">Узнать больше &rarr;</a>
+              <span class="badge bg-primary-subtle text-primary mb-2 w-auto me-auto">Для новичков</span>
+              <h4 class="fw-bold text-white">Шахматный старт</h4>
+              <p class="text-light-50 small mb-4">Правила игры, фигуры, основы матования и простые комбинации.</p>
+              <a href="#contacts" class="btn btn-outline-accent mt-auto">Записаться</a>
             </div>
           </div>
         </div>
 
+        <!-- Курс 2 -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card course-card h-100">
-            <img src="images/course2.jpg" class="card-img-top" alt="Продвинутый">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=600&auto=format&fit=crop" class="card-img-top" alt="Тактика">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
-              <p class="text-muted small mb-2">Уровень 2</p>
-              <h3 class="h5 fw-normal text-white mb-3">Глубокая тактика</h3>
-              <p class="text-secondary small mb-4">Расчёт многоходовых комбинаций и позиционный анализ средних стадий игры.</p>
-              <a href="#contacts" class="text-white text-decoration-none small mt-auto">Узнать больше &rarr;</a>
+              <span class="badge bg-warning-subtle text-warning mb-2 w-auto me-auto">Продвинутый</span>
+              <h4 class="fw-bold text-white">Тактика и стратегия</h4>
+              <p class="text-light-50 small mb-4">Изучение популярных дебютов, расчета вариантов и атаки на короля.</p>
+              <a href="#contacts" class="btn btn-outline-accent mt-auto">Записаться</a>
             </div>
           </div>
         </div>
 
+        <!-- Курс 3 -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card course-card h-100">
-            <img src="images/course3.jpg" class="card-img-top" alt="Турнирный">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?q=80&w=600&auto=format&fit=crop" class="card-img-top" alt="Мастер">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
-              <p class="text-muted small mb-2">Уровень 3</p>
-              <h3 class="h5 fw-normal text-white mb-3">Турнирная практика</h3>
-              <p class="text-secondary small mb-4">Подготовка к рейтинговым партическим состязаниям и психология борьбы.</p>
-              <a href="#contacts" class="text-white text-decoration-none small mt-auto">Узнать больше &rarr;</a>
+              <span class="badge bg-danger-subtle text-danger mb-2 w-auto me-auto">Pro</span>
+              <h4 class="fw-bold text-white">Турнирная профи-группа</h4>
+              <p class="text-light-50 small mb-4">Разбор игр гроссмейстеров, эндшпиль и психологическая подготовка.</p>
+              <a href="#contacts" class="btn btn-outline-accent mt-auto">Записаться</a>
             </div>
           </div>
         </div>
@@ -155,43 +182,53 @@
   <!-- КОНТАКТЫ -->
   <section class="py-5" id="contacts">
     <div class="container py-4">
-      <div class="row g-5">
-        <div class="col-lg-5">
-          <h2 class="h3 fw-light text-white mb-3">Связаться с нами</h2>
-          <p class="text-secondary fs-6 mb-4">Оставьте заявку, и мы подберем удобное время для первого урока.</p>
-          <p class="text-muted small mb-1">Локация</p>
-          <p class="text-white fs-6 mb-3">Алматы, Казахстан</p>
-        </div>
-
-        <div class="col-lg-7">
-          <form>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <input type="text" class="form-control minimal-input" placeholder="Имя">
-              </div>
-              <div class="col-md-6">
-                <input type="tel" class="form-control minimal-input" placeholder="Телефон">
-              </div>
-              <div class="col-12">
-                <select class="form-select minimal-input">
-                  <option selected>Уровень подготовки</option>
-                  <option>Начинающий</option>
-                  <option>Продвинутый</option>
-                </select>
-              </div>
-              <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-light rounded-0 px-5 py-3 fs-6">Отправить</button>
-              </div>
+      <div class="glass-box p-4 p-md-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5">
+            <h2 class="fw-bold text-white fs-1 mb-3">Запишитесь на вводный урок</h2>
+            <p class="text-light-50 mb-4">Мы оценим уровень игры и подберём идеальную группу.</p>
+            
+            <div class="d-flex align-items-center gap-3 mb-3 text-light-50">
+              <i class="bi bi-geo-alt-fill text-accent fs-4"></i>
+              <span>Казахстан, г. Алматы</span>
             </div>
-          </form>
+            <div class="d-flex align-items-center gap-3 text-light-50">
+              <i class="bi bi-telephone-fill text-accent fs-4"></i>
+              <span>+7 (707) 000-00-00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control custom-input" placeholder="Ваше имя">
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control custom-input" placeholder="Телефон">
+                </div>
+                <div class="col-12">
+                  <select class="form-select custom-input">
+                    <option selected>Уровень игры</option>
+                    <option>Начинающий</option>
+                    <option>Средний</option>
+                    <option>Продвинутый</option>
+                  </select>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-accent w-100 py-3 rounded-3">Отправить заявку</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="py-4 border-top border-dark text-center text-muted small">
+  <footer class="py-4 text-center text-white-50 small border-top border-secondary border-opacity-10">
     <div class="container">
-      <p class="mb-0">&copy; 2026 ChessOnline. Маржан Орынбек.</p>
+      <p class="mb-0">&copy; 2026 ChessAcademy. Автор: Маржан Орынбек.</p>
     </div>
   </footer>
 
