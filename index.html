@@ -9,91 +9,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   
-  <style>
-    /* Основные стили страницы */
-    :root {
-      --bs-primary: #6366f1;
-      --bs-body-bg: #0f172a;
-      --bs-body-color: #f8fafc;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: #0f172a;
-      color: #f8fafc;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    }
-
-    /* Исправление галереи */
-    .gallery-card {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(99, 102, 241, 0.25);
-    }
-
-    .gallery-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Карточки курсов и тренеров */
-    .custom-card {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .custom-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-img-top {
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .hero-img {
-      max-width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      border: 1px solid #334155;
-      object-fit: cover;
-    }
-
-    /* Поля формы */
-    .form-control, .form-select {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      color: #fff;
-      padding: 12px 16px;
-    }
-
-    .form-control:focus, .form-select:focus {
-      background-color: #1e293b;
-      color: #fff;
-      border-color: #6366f1;
-      box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
-    }
-  </style>
+  <!-- Подключение кастомного файла стилей -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR С КНОПКОЙ-БУРГЕРОМ -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary py-3">
     <div class="container">
       <a class="navbar-brand fw-bold fs-3 text-primary" href="#">
@@ -110,7 +31,6 @@
           <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
           <li class="nav-item"><a class="nav-link" href="#courses">Курсы</a></li>
           <li class="nav-item"><a class="nav-link" href="#trainers">Тренеры</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">Отзывы</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
         </ul>
         <a href="#contacts" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Записаться</a>
@@ -135,7 +55,7 @@
         </div>
       </div>
       <div class="col-lg-6 text-center">
-        <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80" alt="Шахматы" class="hero-img img-fluid">
+        <img src="images/hero.jpg" alt="Шахматы" class="hero-img img-fluid">
       </div>
     </div>
   </section>
@@ -145,7 +65,7 @@
     <div class="container py-4">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=800&q=80" alt="О школе" class="img-fluid rounded-4 border border-secondary">
+          <img src="images/about.jpg" alt="О школе" class="img-fluid rounded-4 border border-secondary">
         </div>
         <div class="col-lg-6">
           <h2 class="fw-bold fs-1 mb-4">Почему именно ChessOnline?</h2>
@@ -164,7 +84,7 @@
     </div>
   </section>
 
-  <!-- ИСПРАВЛЕННАЯ ГАЛЕРЕЯ -->
+  <!-- ГАЛЕРЕЯ ДЛЯ ТВОИХ ФОТО -->
   <section class="py-5 container" id="gallery">
     <div class="text-center my-4">
       <h2 class="fw-bold fs-1 mb-3 text-white">Атмосфера и жизнь академии</h2>
@@ -174,28 +94,28 @@
     <div class="row g-4 mt-2">
       <div class="col-12 col-md-6 col-lg-3">
         <div class="gallery-card">
-          <img src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?auto=format&fit=crop&w=600&q=80" alt="Фото 1" class="gallery-img">
+          <img src="images/gallery1.jpg" alt="Фото 1" class="gallery-img">
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="gallery-card">
-          <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&w=600&q=80" alt="Фото 2" class="gallery-img">
+          <img src="images/gallery2.jpg" alt="Фото 2" class="gallery-img">
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="gallery-card">
-          <img src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&w=600&q=80" alt="Фото 3" class="gallery-img">
+          <img src="images/gallery3.jpg" alt="Фото 3" class="gallery-img">
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="gallery-card">
-          <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=600&q=80" alt="Фото 4" class="gallery-img">
+          <img src="images/gallery4.jpg" alt="Фото 4" class="gallery-img">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COURSES SECTION -->
+  <!-- COURSES SECTION (ПО ТРЕБОВАНИЮ: col-12 col-md-6 col-lg-4) -->
   <section class="py-5 bg-dark border-top border-bottom border-secondary" id="courses">
     <div class="container py-4">
       <div class="text-center mb-5">
@@ -206,7 +126,7 @@
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card custom-card h-100">
-            <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Начинающим">
+            <img src="images/course1.jpg" class="card-img-top" alt="Начинающим">
             <div class="card-body p-4 d-flex flex-column">
               <span class="badge bg-info mb-2 w-auto me-auto">Старт</span>
               <h4 class="card-title fw-bold">Шахматы с нуля</h4>
@@ -218,7 +138,7 @@
 
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card custom-card h-100">
-            <img src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Продвинутый">
+            <img src="images/course2.jpg" class="card-img-top" alt="Продвинутый">
             <div class="card-body p-4 d-flex flex-column">
               <span class="badge bg-warning text-dark mb-2 w-auto me-auto">Профи</span>
               <h4 class="card-title fw-bold">Продвинутая тактика</h4>
@@ -230,7 +150,7 @@
 
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card custom-card h-100">
-            <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Турниры">
+            <img src="images/course3.jpg" class="card-img-top" alt="Турниры">
             <div class="card-body p-4 d-flex flex-column">
               <span class="badge bg-danger mb-2 w-auto me-auto">Турниры</span>
               <h4 class="card-title fw-bold">Турнирная подготовка</h4>
@@ -253,7 +173,7 @@
     <div class="row g-4">
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card custom-card h-100 text-center p-3">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" class="rounded-circle mx-auto mt-3" style="width: 130px; height: 130px; object-fit: cover;" alt="Маржан Орынбек">
+          <img src="images/trainer1.jpg" class="rounded-circle mx-auto mt-3" style="width: 130px; height: 130px; object-fit: cover;" alt="Маржан Орынбек">
           <div class="card-body">
             <h4 class="fw-bold mb-1">Маржан Орынбек</h4>
             <p class="text-primary mb-3">Основатель & Главный тренер</p>
@@ -264,7 +184,7 @@
 
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card custom-card h-100 text-center p-3">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" class="rounded-circle mx-auto mt-3" style="width: 130px; height: 130px; object-fit: cover;" alt="Арман Сатов">
+          <img src="images/trainer2.jpg" class="rounded-circle mx-auto mt-3" style="width: 130px; height: 130px; object-fit: cover;" alt="Арман Сатов">
           <div class="card-body">
             <h4 class="fw-bold mb-1">Арман Сатов</h4>
             <p class="text-primary mb-3">Международный мастер</p>
@@ -275,37 +195,11 @@
 
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card custom-card h-100 text-center p-3">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" class="rounded-circle mx-auto mt-3" style="width: 130px; height: 130px; object-fit: cover;" alt="Алия Алиева">
+          <img src="images/trainer3.jpg" class="rounded-circle mx-auto mt-3" style="width: 130px; height: 130px; object-fit: cover;" alt="Алия Алиева">
           <div class="card-body">
             <h4 class="fw-bold mb-1">Алия Алиева</h4>
             <p class="text-primary mb-3">Детский тренер</p>
             <p class="text-secondary small">Эксперт по игровой методике обучения детей от 6 лет.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS SECTION -->
-  <section class="py-5 bg-dark border-top border-bottom border-secondary" id="testimonials">
-    <div class="container py-4">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold fs-1 mb-3">Отзывы наших учеников</h2>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-12 col-md-6">
-          <div class="card custom-card p-4 h-100">
-            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-            <p class="text-secondary mb-3">«Занимаюсь уже 6 месяцев. Отличная подача материала и удобный формат уроков!»</p>
-            <h6 class="fw-bold mb-0">— Данияр К.</h6>
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="card custom-card p-4 h-100">
-            <div class="text-warning mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-            <p class="text-secondary mb-3">«Прекрасная школа! Маржан очень понятно объясняет сложные концепции.»</p>
-            <h6 class="fw-bold mb-0">— Амина С.</h6>
           </div>
         </div>
       </div>
@@ -359,7 +253,7 @@
     </div>
   </footer>
 
-  <!-- Bootstrap 5 JS -->
+  <!-- Bootstrap 5 JS Bundle (Обязательное требование) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
 </body>
 </html>
