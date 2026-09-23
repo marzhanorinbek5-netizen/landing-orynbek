@@ -1,126 +1,79 @@
-/* Переопределение Bootstrap CSS variables (по заданию) */
 :root {
-  --bs-primary: #6366f1;
-  --bs-primary-hover: #4f46e5;
-  --bs-body-bg: #0b0f19;
-  --bs-body-color: #f1f5f9;
-}
-
-html {
-  scroll-behavior: smooth;
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
 }
 
 body {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
-/* Навигация */
 .custom-nav {
-  background-color: rgba(11, 15, 25, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.nav-link:hover {
-  color: #fff !important;
-}
-
-/* Градиенты и бэджи */
-.text-gradient {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.badge-soft {
-  background-color: rgba(99, 102, 241, 0.15);
-  color: #818cf8;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-}
-
-.section-dark {
-  background-color: #111827;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(18, 18, 18, 0.9);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Стеклянные карточки (Glassmorphism) */
-.glass-card {
-  background: rgba(17, 24, 39, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+.tracking-wide { letter-spacing: 0.15em; }
+.tracking-widest { letter-spacing: 0.25em; }
+
+.hero-section {
+  min-height: 85vh;
+  padding-top: 100px;
 }
 
-.glass-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(99, 102, 241, 0.4);
-}
-
-.card-img-top {
-  height: 200px;
+.hero-image {
+  width: 100%;
+  height: 420px;
   object-fit: cover;
+  filter: grayscale(20%);
 }
 
-/* Галерея */
-.gallery-card {
-  border-radius: 16px;
+.gallery-wrapper {
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  height: 240px;
+  height: 280px;
+  background-color: #1a1a1a;
 }
 
-.gallery-card img {
+.gallery-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: grayscale(30%);
 }
 
-.gallery-card:hover img {
-  transform: scale(1.05);
+.gallery-wrapper:hover .gallery-img {
+  transform: scale(1.03);
+  filter: grayscale(0%);
 }
 
-/* Тренеры */
-.trainer-avatar {
-  width: 110px;
-  height: 110px;
+.course-card {
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0;
+}
+
+.course-card .card-img-top {
+  height: 200px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--bs-primary);
+  border-radius: 0;
+  filter: grayscale(20%);
 }
 
-/* Формы */
-.custom-input {
-  background-color: rgba(255, 255, 255, 0.05);
+.minimal-input {
+  background-color: #181818;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
   color: #fff;
-  padding: 12px 16px;
-  border-radius: 8px;
+  padding: 14px 18px;
 }
 
-.custom-input:focus {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: var(--bs-primary);
+.minimal-input:focus {
+  background-color: #1e1e1e;
+  border-color: #ffffff;
   color: #fff;
   box-shadow: none;
-}
-
-.icon-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background-color: rgba(99, 102, 241, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.border-glass {
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
